@@ -37,9 +37,6 @@ if not os.environ.get("OPENAI_API_KEY"):
     st.stop()
 
 
-# ---------------------------------------------------------------------------
-# Core pipeline functions
-# ---------------------------------------------------------------------------
 def fetch_transcript(video_id: str):
     try:
         ytt_api = YouTubeTranscriptApi()
@@ -85,9 +82,8 @@ def answer_question(question: str, retriever, prompt: PromptTemplate, llm: ChatO
     return response.content
 
 
-# ---------------------------------------------------------------------------
 # Session state setup
-# ---------------------------------------------------------------------------
+
 if "vectorstore" not in st.session_state:
     st.session_state.vectorstore = None
 if "video_id" not in st.session_state:
@@ -98,9 +94,9 @@ if "chat_history" not in st.session_state:
 prompt_template = build_prompt()
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.2)
 
-# ---------------------------------------------------------------------------
+
 # Step 1: Video ID input + transcript loading
-# ---------------------------------------------------------------------------
+
 with st.form("video_form"):
     video_id_input = st.text_input(
         "YouTube Video ID",
@@ -122,9 +118,9 @@ if load_clicked and video_id_input:
             st.success(
                 f"Transcript loaded and indexed into {num_chunks} chunks. Ask away below!")
 
-# ---------------------------------------------------------------------------
+
 # Step 2: Question + answer, once a transcript is loaded
-# ---------------------------------------------------------------------------
+
 if st.session_state.vectorstore is not None:
     st.divider()
     st.subheader(f"Ask about video: {st.session_state.video_id}")
