@@ -1,0 +1,11 @@
+langchain
+langchain-core
+langchain-community
+langchain-openai
+openai
+youtube-transcript-api
+faiss-cpu
+tiktoken
+python-dotenv
+requests==2.32.4
+streamlit
