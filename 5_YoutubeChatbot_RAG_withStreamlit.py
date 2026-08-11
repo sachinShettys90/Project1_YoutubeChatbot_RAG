@@ -25,7 +25,7 @@ from langchain_core.prompts import PromptTemplate
 load_dotenv()
 
 st.set_page_config(page_title="YouTube RAG Chatbot", page_icon="🎥")
-st.title("🎥 YouTube RAG Chatbot")
+st.title("YouTube RAG Chatbot")
 st.caption("Ask questions about any YouTube video's transcript.")
 
 if not os.environ.get("OPENAI_API_KEY"):
