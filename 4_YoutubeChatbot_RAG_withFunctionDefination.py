@@ -1,15 +1,5 @@
-"""
-YouTube RAG Chatbot
---------------------
-Fetches a YouTube video's transcript, indexes it into a FAISS vector store,
-and lets you ask questions about the video's content using an OpenAI chat model.
+# with function defination, RAG without chain implementation
 
-Setup:
-    1. pip install -r requirements.txt
-    2. Create a .env file in this same folder with:
-           OPENAI_API_KEY=your-key-here
-    3. Run: python youtube_rag_chatbot.py
-"""
 
 from langchain_core.prompts import PromptTemplate
 from langchain_community.vectorstores import FAISS
@@ -23,7 +13,6 @@ from youtube_transcript_api import (
 )
 import os
 
-# Setup: load API key from .env (never hardcode this)
 
 from dotenv import load_dotenv
 load_dotenv()
