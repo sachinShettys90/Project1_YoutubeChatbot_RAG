@@ -1,13 +1,10 @@
-"""
-YouTube RAG Chatbot - Streamlit App
-------------------------------------
-Enter a YouTube video ID, load its transcript, then ask questions about it.
 
+"""
 Setup:
     1. pip install -r requirements.txt   (make sure "streamlit" is in there)
     2. Create a .env file in this same folder with:
            OPENAI_API_KEY=your-key-here
-    3. Run: streamlit run streamlit_app.py
+    3. Run: streamlit run 5_YoutubeChatbot_RAG_withStreamlit.py
 """
 
 import os
