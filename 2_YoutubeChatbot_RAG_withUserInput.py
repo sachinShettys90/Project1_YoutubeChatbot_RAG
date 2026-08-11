@@ -1,3 +1,5 @@
+# This will accept the user input video__id and the Query and generates the answer for the Query
+
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
